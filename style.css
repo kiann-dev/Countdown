@@ -1,0 +1,2594 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+:root {
+
+    --background: #050816;
+    --card: rgba(255,255,255,0.08);
+
+    --white: #ffffff;
+
+    --pink: #ff7eb3;
+    --purple: #9b5cff;
+    --blue: #4facfe;
+
+    --shadow:
+    0 0 30px rgba(255,126,179,0.25);
+
+}
+
+
+
+html {
+
+    scroll-behavior: smooth;
+
+}
+
+
+
+body {
+
+    min-height: 100vh;
+
+    background:
+    radial-gradient(circle at top,
+    #172554,
+    var(--background) 55%);
+
+    color: var(--white);
+
+    font-family: 'Poppins', sans-serif;
+
+    overflow-x: hidden;
+
+}
+
+
+
+
+
+/* =========================
+   FUNDO
+========================= */
+
+
+
+.stars {
+
+    position: fixed;
+
+    inset: 0;
+
+    background-image:
+    radial-gradient(#ffffff 1px, transparent 1px);
+
+    background-size:
+    40px 40px;
+
+    opacity: .35;
+
+    animation:
+    starsMove 80s linear infinite;
+
+    z-index: -5;
+
+}
+
+
+
+@keyframes starsMove {
+
+
+from {
+
+    transform:
+    translateY(0);
+
+}
+
+
+to {
+
+    transform:
+    translateY(-500px);
+
+}
+
+
+}
+
+
+
+
+/* LUA */
+
+
+.moon {
+
+
+    position: fixed;
+
+    top: 80px;
+
+    right: 10%;
+
+
+    width: 130px;
+
+    height:130px;
+
+
+    background:
+
+    radial-gradient(circle,
+    #fff7d6,
+    #ffe9a8);
+
+
+    border-radius:50%;
+
+
+    box-shadow:
+
+    0 0 40px #ffe9a8,
+    0 0 90px rgba(255,233,168,.6);
+
+
+    animation:
+
+    moonFloat 8s ease-in-out infinite;
+
+
+    z-index:-3;
+
+
+}
+
+
+
+
+.moon-glow {
+
+
+    position:absolute;
+
+    inset:-40px;
+
+    border-radius:50%;
+
+
+    background:
+
+    rgba(255,233,168,.15);
+
+
+    filter:blur(30px);
+
+
+}
+
+
+
+
+@keyframes moonFloat {
+
+
+0%,100% {
+
+    transform:
+    translateY(0);
+
+}
+
+
+50% {
+
+    transform:
+    translateY(-20px);
+
+}
+
+
+}
+
+
+
+
+
+/* NUVENS */
+
+
+.clouds {
+
+
+position:fixed;
+
+bottom:0;
+
+left:0;
+
+width:200%;
+
+height:200px;
+
+
+background:
+
+radial-gradient(
+ellipse,
+rgba(255,255,255,.08),
+transparent 70%
+);
+
+
+filter:blur(20px);
+
+
+animation:
+
+cloudMove 40s linear infinite;
+
+
+z-index:-2;
+
+
+}
+
+
+
+@keyframes cloudMove {
+
+
+from {
+
+transform:
+translateX(0);
+
+}
+
+
+to {
+
+transform:
+translateX(-50%);
+
+}
+
+
+}
+
+
+
+
+
+
+
+
+/* CORAÇÕES */
+
+
+.hearts-container {
+
+
+position:fixed;
+
+inset:0;
+
+
+pointer-events:none;
+
+
+overflow:hidden;
+
+
+z-index:5;
+
+
+}
+
+
+
+.floating-heart {
+
+
+position:absolute;
+
+
+font-size:20px;
+
+
+animation:
+
+floatHeart linear forwards;
+
+
+opacity:.8;
+
+
+}
+
+
+
+@keyframes floatHeart {
+
+
+from {
+
+
+transform:
+
+translateY(100vh)
+scale(.8);
+
+
+opacity:0;
+
+
+}
+
+
+20% {
+
+
+opacity:1;
+
+
+}
+
+
+
+to {
+
+
+transform:
+
+translateY(-20vh)
+scale(1.3);
+
+
+opacity:0;
+
+
+}
+
+
+}
+
+
+
+
+
+
+/* =========================
+   INTRO
+========================= */
+
+
+
+.intro {
+
+
+height:100vh;
+
+
+display:flex;
+
+
+justify-content:center;
+
+
+align-items:center;
+
+
+text-align:center;
+
+
+padding:20px;
+
+
+
+}
+
+
+
+.intro-content {
+
+
+max-width:600px;
+
+
+animation:
+
+fadeUp 2s ease;
+
+
+}
+
+
+
+.heart-logo {
+
+
+font-size:70px;
+
+
+animation:
+
+pulse 2s infinite;
+
+
+}
+
+
+
+.intro h1 {
+
+
+font-family:
+
+'Cormorant Garamond',
+serif;
+
+
+font-size:4rem;
+
+
+margin:20px 0;
+
+
+}
+
+
+
+.intro-text {
+
+
+font-size:1.3rem;
+
+
+font-weight:300;
+
+
+}
+
+
+
+.intro-small {
+
+
+margin-top:20px;
+
+
+opacity:.75;
+
+
+}
+
+
+
+.enter-btn {
+
+
+margin-top:40px;
+
+
+padding:15px 45px;
+
+
+border:none;
+
+
+border-radius:50px;
+
+
+background:
+
+linear-gradient(
+45deg,
+var(--pink),
+var(--purple)
+);
+
+
+
+color:white;
+
+
+font-size:1rem;
+
+
+cursor:pointer;
+
+
+box-shadow:var(--shadow);
+
+
+transition:.3s;
+
+
+}
+
+
+
+.enter-btn:hover {
+
+
+transform:
+
+scale(1.08);
+
+
+}
+
+/* =========================
+   UTILIDADES
+========================= */
+
+
+.hidden {
+
+    display:none !important;
+
+}
+
+
+
+.glass-card {
+
+
+    background:
+
+    rgba(255,255,255,.08);
+
+
+    backdrop-filter:
+
+    blur(20px);
+
+
+    border:
+
+    1px solid
+
+    rgba(255,255,255,.15);
+
+
+
+    border-radius:
+
+    25px;
+
+
+
+    box-shadow:
+
+    0 0 40px
+
+    rgba(0,0,0,.25);
+
+
+
+}
+
+
+
+
+
+/* =========================
+   CONTEÚDO PRINCIPAL
+========================= */
+
+
+main {
+
+
+    width:100%;
+
+
+    overflow:hidden;
+
+
+}
+
+
+
+
+
+section {
+
+
+    min-height:100vh;
+
+
+    display:flex;
+
+
+    align-items:center;
+
+
+    justify-content:center;
+
+
+    padding:40px 20px;
+
+
+}
+
+
+
+
+
+/* =========================
+   CONTADOR
+========================= */
+
+
+.countdown-section {
+
+
+    padding-top:80px;
+
+
+}
+
+
+
+.countdown-section .glass-card {
+
+
+    max-width:900px;
+
+
+    width:100%;
+
+
+    text-align:center;
+
+
+    padding:50px 30px;
+
+
+}
+
+
+
+
+
+.countdown-section h2 {
+
+
+    font-family:
+
+    'Cormorant Garamond',
+    serif;
+
+
+    font-size:3rem;
+
+
+    margin-bottom:20px;
+
+
+}
+
+
+
+.changing-message {
+
+
+    opacity:.8;
+
+
+    min-height:30px;
+
+
+}
+
+
+
+
+
+.countdown {
+
+
+    display:flex;
+
+
+    justify-content:center;
+
+
+    gap:20px;
+
+
+    flex-wrap:wrap;
+
+
+    margin-top:45px;
+
+
+}
+
+
+
+
+
+.time-box {
+
+
+    width:140px;
+
+
+    height:140px;
+
+
+    display:flex;
+
+
+    flex-direction:column;
+
+
+    justify-content:center;
+
+
+    align-items:center;
+
+
+
+    background:
+
+    rgba(255,255,255,.06);
+
+
+
+    border-radius:
+
+    25px;
+
+
+
+    border:
+
+    1px solid
+
+    rgba(255,255,255,.15);
+
+
+
+    transition:.4s;
+
+
+}
+
+
+
+
+
+.time-box:hover {
+
+
+    transform:
+
+    translateY(-10px);
+
+
+    box-shadow:
+
+    0 0 30px
+
+    rgba(255,126,179,.35);
+
+
+}
+
+
+
+
+
+.time-box span {
+
+
+    font-size:3rem;
+
+
+    font-weight:600;
+
+
+    background:
+
+    linear-gradient(
+    45deg,
+    #fff,
+    #ff9dcc
+    );
+
+
+    -webkit-background-clip:text;
+
+
+    color:transparent;
+
+
+}
+
+
+
+
+
+.time-box label {
+
+
+    margin-top:10px;
+
+
+    opacity:.8;
+
+
+}
+
+
+
+
+
+/* =========================
+   PLAYER DE MÚSICA
+========================= */
+
+
+
+.music-player {
+
+
+    width:450px;
+
+
+    max-width:100%;
+
+
+    padding:40px;
+
+
+    text-align:center;
+
+
+}
+
+
+
+
+
+.music-player h3 {
+
+
+    font-family:
+
+    'Cormorant Garamond',
+    serif;
+
+
+    font-size:2rem;
+
+
+}
+
+
+
+
+
+#songName {
+
+
+    margin:
+
+    20px 0;
+
+
+    opacity:.8;
+
+
+}
+
+
+
+
+
+.music-controls {
+
+
+    display:flex;
+
+
+    justify-content:center;
+
+
+    gap:15px;
+
+
+}
+
+
+
+
+
+.music-controls button {
+
+
+    width:55px;
+
+
+    height:55px;
+
+
+    border-radius:50%;
+
+
+    border:none;
+
+
+
+    background:
+
+    rgba(255,255,255,.15);
+
+
+
+    color:white;
+
+
+
+    font-size:1.2rem;
+
+
+    cursor:pointer;
+
+
+
+    transition:.3s;
+
+
+}
+
+
+
+
+
+.music-controls button:hover {
+
+
+    transform:
+
+    scale(1.15);
+
+
+
+    background:
+
+    rgba(255,126,179,.35);
+
+
+}
+
+
+
+
+
+/* =========================
+   CARTA
+========================= */
+
+
+
+.letter-card {
+
+
+    padding:50px;
+
+
+    text-align:center;
+
+
+    max-width:450px;
+
+
+}
+
+
+
+
+
+.envelope {
+
+
+    width:150px;
+
+
+    height:100px;
+
+
+    margin:
+
+    0 auto 30px;
+
+
+    position:relative;
+
+
+}
+
+
+
+.envelope-body {
+
+
+    position:absolute;
+
+
+    inset:0;
+
+
+    background:
+
+    linear-gradient(
+    135deg,
+    #ff7eb3,
+    #9b5cff
+    );
+
+
+
+    border-radius:
+
+    10px;
+
+
+
+    display:flex;
+
+
+    align-items:center;
+
+
+    justify-content:center;
+
+
+    font-size:50px;
+
+
+}
+
+
+
+.envelope-top {
+
+
+    position:absolute;
+
+
+    top:0;
+
+
+    width:0;
+
+
+    height:0;
+
+
+
+    border-left:
+
+    75px solid transparent;
+
+
+    border-right:
+
+    75px solid transparent;
+
+
+    border-top:
+
+    60px solid rgba(255,255,255,.3);
+
+
+
+    z-index:2;
+
+
+}
+
+
+
+
+
+.letter-card button {
+
+
+    margin-top:25px;
+
+
+    padding:
+
+    14px 35px;
+
+
+
+    border:none;
+
+
+    border-radius:40px;
+
+
+
+    background:
+
+    linear-gradient(
+    45deg,
+    #ff7eb3,
+    #9b5cff
+    );
+
+
+
+    color:white;
+
+
+    cursor:pointer;
+
+
+}
+
+/* =========================
+   MODAL DA CARTA
+========================= */
+
+
+.letter-modal {
+
+
+    position:fixed;
+
+
+    inset:0;
+
+
+    background:
+
+    rgba(0,0,0,.7);
+
+
+    backdrop-filter:
+
+    blur(10px);
+
+
+
+    display:flex;
+
+
+    justify-content:center;
+
+
+    align-items:center;
+
+
+
+    opacity:0;
+
+
+    pointer-events:none;
+
+
+    transition:.5s;
+
+
+
+    z-index:20;
+
+
+}
+
+
+
+.letter-modal.active {
+
+
+    opacity:1;
+
+
+    pointer-events:auto;
+
+
+}
+
+
+
+
+
+.letter-content {
+
+
+    width:90%;
+
+
+    max-width:600px;
+
+
+    padding:50px;
+
+
+    border-radius:30px;
+
+
+
+    background:
+
+    linear-gradient(
+    135deg,
+    rgba(255,255,255,.15),
+    rgba(255,255,255,.05)
+    );
+
+
+
+    border:
+
+    1px solid
+
+    rgba(255,255,255,.2);
+
+
+
+    backdrop-filter:
+
+    blur(25px);
+
+
+
+    animation:
+
+    scaleIn .5s ease;
+
+
+
+}
+
+
+
+
+
+.letter-content h2 {
+
+
+    font-family:
+
+    'Cormorant Garamond',
+    serif;
+
+
+    font-size:3rem;
+
+
+    text-align:center;
+
+
+    margin-bottom:30px;
+
+
+}
+
+
+
+.letter-content p {
+
+
+    line-height:1.8;
+
+
+    text-align:center;
+
+
+}
+
+
+
+
+
+.close-letter {
+
+
+    position:absolute;
+
+
+    right:30px;
+
+
+    top:20px;
+
+
+
+    background:none;
+
+
+    border:none;
+
+
+    color:white;
+
+
+    font-size:35px;
+
+
+    cursor:pointer;
+
+
+}
+
+
+
+
+
+
+
+/* =========================
+   TIMELINE
+========================= */
+
+
+.timeline-section {
+
+
+    flex-direction:column;
+
+
+}
+
+
+
+.timeline-section h2 {
+
+
+    font-family:
+
+    'Cormorant Garamond',
+    serif;
+
+
+    font-size:3rem;
+
+
+    margin-bottom:50px;
+
+
+}
+
+
+
+
+
+.timeline {
+
+
+    width:90%;
+
+
+    max-width:800px;
+
+
+    position:relative;
+
+
+}
+
+
+
+
+
+.timeline::before {
+
+
+    content:"";
+
+
+    position:absolute;
+
+
+    left:50%;
+
+
+    transform:
+
+    translateX(-50%);
+
+
+    width:3px;
+
+
+    height:100%;
+
+
+
+    background:
+
+    linear-gradient(
+    var(--pink),
+    var(--purple)
+    );
+
+
+}
+
+
+
+
+
+.timeline-item {
+
+
+    width:50%;
+
+
+    padding:30px;
+
+
+    position:relative;
+
+
+}
+
+
+
+
+
+.timeline-item:nth-child(odd) {
+
+
+    left:0;
+
+
+    text-align:right;
+
+
+}
+
+
+
+.timeline-item:nth-child(even) {
+
+
+    left:50%;
+
+
+}
+
+
+
+.timeline-icon {
+
+
+    position:absolute;
+
+
+    top:30px;
+
+
+    width:60px;
+
+
+    height:60px;
+
+
+    border-radius:50%;
+
+
+
+    background:
+
+    rgba(255,255,255,.15);
+
+
+
+    display:flex;
+
+
+    align-items:center;
+
+
+    justify-content:center;
+
+
+
+    font-size:25px;
+
+
+    border:
+
+    1px solid
+
+    rgba(255,255,255,.2);
+
+
+
+}
+
+
+
+
+
+.timeline-item:nth-child(odd) .timeline-icon {
+
+
+    right:-30px;
+
+
+}
+
+
+
+
+.timeline-item:nth-child(even) .timeline-icon {
+
+
+    left:-30px;
+
+
+}
+
+
+
+
+
+.timeline-text {
+
+
+    padding:25px;
+
+
+    border-radius:20px;
+
+
+
+    background:
+
+    rgba(255,255,255,.07);
+
+
+
+    backdrop-filter:
+
+    blur(15px);
+
+
+
+}
+
+
+
+
+
+.timeline-text h3 {
+
+
+    margin-bottom:10px;
+
+
+}
+
+
+
+
+
+.timeline-item.future {
+
+
+    opacity:.7;
+
+
+}
+
+
+
+.timeline-item.future .timeline-icon {
+
+
+    animation:
+
+    pulse 2s infinite;
+
+
+}
+
+
+
+
+
+
+
+/* =========================
+   CALENDÁRIO
+========================= */
+
+
+
+.calendar-card {
+
+
+    padding:40px;
+
+
+    text-align:center;
+
+
+}
+
+
+
+
+
+.calendar-card h2 {
+
+
+    font-family:
+
+    'Cormorant Garamond',
+    serif;
+
+
+    font-size:3rem;
+
+
+}
+
+
+
+
+
+.calendar {
+
+
+    margin-top:30px;
+
+
+}
+
+
+
+
+
+.month {
+
+
+    margin-bottom:25px;
+
+
+    font-size:1.3rem;
+
+
+}
+
+
+
+.days {
+
+
+    display:grid;
+
+
+    grid-template-columns:
+
+    repeat(7,1fr);
+
+
+
+    gap:10px;
+
+
+}
+
+
+
+
+
+.days span {
+
+
+    width:45px;
+
+
+    height:45px;
+
+
+    display:flex;
+
+
+    align-items:center;
+
+
+    justify-content:center;
+
+
+
+    border-radius:50%;
+
+
+    background:
+
+    rgba(255,255,255,.08);
+
+
+
+}
+
+
+
+.days .highlight {
+
+
+    background:
+
+    linear-gradient(
+    45deg,
+    var(--pink),
+    var(--purple)
+    );
+
+
+
+    box-shadow:
+
+    0 0 25px
+
+    rgba(255,126,179,.7);
+
+
+
+}
+
+
+
+
+
+.august-day {
+
+
+    margin-top:30px;
+
+
+    padding:20px;
+
+
+    border-radius:20px;
+
+
+    background:
+
+    rgba(255,255,255,.1);
+
+
+    animation:
+
+    pulse 2s infinite;
+
+
+}
+
+
+
+
+
+
+
+/* =========================
+   EASTER EGGS
+========================= */
+
+
+.secret-elements {
+
+
+    display:flex;
+
+
+    gap:50px;
+
+
+    font-size:50px;
+
+
+}
+
+
+
+
+
+.secret-elements div {
+
+
+    cursor:pointer;
+
+
+    transition:.3s;
+
+
+}
+
+
+
+.secret-elements div:hover {
+
+
+    transform:
+
+    scale(1.3);
+
+
+}
+
+
+
+
+
+#secretMessage {
+
+
+    margin-top:40px;
+
+
+    opacity:.8;
+
+
+    text-align:center;
+
+
+}
+
+/* =========================
+   DESBLOQUEIO
+========================= */
+
+
+.unlock-card {
+
+
+    max-width:500px;
+
+
+    width:100%;
+
+
+    padding:50px;
+
+
+    text-align:center;
+
+
+}
+
+
+
+
+.unlock-card h2 {
+
+
+    font-family:
+
+    'Cormorant Garamond',
+    serif;
+
+
+    font-size:2.8rem;
+
+
+}
+
+
+
+
+.locked-icon {
+
+
+    margin:35px;
+
+
+    font-size:80px;
+
+
+    animation:
+
+    pulse 2s infinite;
+
+
+}
+
+
+
+
+.unlock-status {
+
+
+    opacity:.8;
+
+
+}
+
+
+
+
+
+
+
+/* =========================
+   TELA FINAL
+========================= */
+
+
+.final-screen {
+
+
+    position:fixed;
+
+
+    inset:0;
+
+
+    background:
+
+
+    radial-gradient(
+    circle,
+    #28124d,
+    #050816
+    );
+
+
+
+    z-index:50;
+
+
+    text-align:center;
+
+
+}
+
+
+
+
+
+.final-content {
+
+
+    animation:
+
+    fadeUp 2s ease;
+
+
+}
+
+
+
+
+
+.celebration {
+
+
+    font-size:50px;
+
+
+    animation:
+
+    pulse 2s infinite;
+
+
+}
+
+
+
+
+
+.final-content h1 {
+
+
+    margin-top:30px;
+
+
+    font-family:
+
+    'Cormorant Garamond',
+    serif;
+
+
+    font-size:4rem;
+
+
+}
+
+
+
+
+
+.final-content p {
+
+
+    font-size:1.4rem;
+
+
+    margin-top:20px;
+
+
+}
+
+
+
+
+
+
+
+/* =========================
+   CAIXA DE PRESENTE
+========================= */
+
+
+
+.gift-container {
+
+
+    text-align:center;
+
+
+}
+
+
+
+.gift-box {
+
+
+    width:220px;
+
+
+    height:180px;
+
+
+    position:relative;
+
+
+    cursor:pointer;
+
+
+    animation:
+
+    giftFloat 3s infinite;
+
+
+}
+
+
+
+
+
+.gift-body {
+
+
+    position:absolute;
+
+
+    bottom:0;
+
+
+    width:100%;
+
+
+    height:120px;
+
+
+    background:
+
+    linear-gradient(
+    135deg,
+    #ff7eb3,
+    #9b5cff
+    );
+
+
+
+    border-radius:15px;
+
+
+}
+
+
+
+
+
+.gift-lid {
+
+
+    position:absolute;
+
+
+    top:10px;
+
+
+    width:240px;
+
+
+    height:40px;
+
+
+    left:-10px;
+
+
+    background:
+
+    linear-gradient(
+    135deg,
+    #ff9dcc,
+    #9b5cff
+    );
+
+
+    border-radius:10px;
+
+
+    z-index:2;
+
+
+}
+
+
+
+
+
+.ribbon {
+
+
+    position:absolute;
+
+
+    background:
+
+    rgba(255,255,255,.7);
+
+
+}
+
+
+
+
+
+.ribbon.vertical {
+
+
+    width:25px;
+
+
+    height:100%;
+
+
+    left:50%;
+
+
+    transform:
+
+    translateX(-50%);
+
+
+}
+
+
+
+
+
+.ribbon.horizontal {
+
+
+    width:100%;
+
+
+    height:25px;
+
+
+    top:50%;
+
+
+    transform:
+
+    translateY(-50%);
+
+
+}
+
+
+
+
+
+@keyframes giftFloat {
+
+
+0%,100% {
+
+
+    transform:
+
+    translateY(0);
+
+
+}
+
+
+50% {
+
+
+    transform:
+
+    translateY(-15px);
+
+
+}
+
+
+}
+
+
+
+
+
+
+
+/* =========================
+   LOADING
+========================= */
+
+
+
+.redirect-card {
+
+
+    width:90%;
+
+
+    max-width:500px;
+
+
+    padding:40px;
+
+
+    text-align:center;
+
+
+}
+
+
+
+
+
+.loading-bar {
+
+
+    width:100%;
+
+
+    height:15px;
+
+
+    background:
+
+    rgba(255,255,255,.1);
+
+
+    border-radius:20px;
+
+
+    overflow:hidden;
+
+
+    margin:30px 0;
+
+
+}
+
+
+
+
+.loading-progress {
+
+
+    width:0%;
+
+
+    height:100%;
+
+
+    background:
+
+    linear-gradient(
+    90deg,
+    var(--pink),
+    var(--purple)
+    );
+
+
+
+    transition:
+
+    width .3s;
+
+
+}
+
+
+
+
+
+
+
+/* =========================
+   ANIMAÇÕES GERAIS
+========================= */
+
+
+
+@keyframes pulse {
+
+
+0%,100% {
+
+
+    transform:
+
+    scale(1);
+
+
+}
+
+
+50% {
+
+
+    transform:
+
+    scale(1.08);
+
+
+}
+
+
+}
+
+
+
+
+
+@keyframes fadeUp {
+
+
+from {
+
+
+    opacity:0;
+
+
+    transform:
+
+    translateY(40px);
+
+
+}
+
+
+
+to {
+
+
+    opacity:1;
+
+
+    transform:
+
+    translateY(0);
+
+
+}
+
+
+
+}
+
+
+
+
+
+@keyframes scaleIn {
+
+
+from {
+
+
+    opacity:0;
+
+
+    transform:
+
+    scale(.7);
+
+
+}
+
+
+
+to {
+
+
+    opacity:1;
+
+
+    transform:
+
+    scale(1);
+
+
+}
+
+
+}
+
+
+
+
+
+
+
+/* =========================
+   RESPONSIVIDADE
+========================= */
+
+
+
+@media(max-width:768px){
+
+
+.intro h1 {
+
+
+    font-size:3rem;
+
+
+}
+
+
+
+.countdown-section h2 {
+
+
+    font-size:2.2rem;
+
+
+}
+
+
+
+.time-box {
+
+
+    width:100px;
+
+
+    height:100px;
+
+
+}
+
+
+
+.time-box span {
+
+
+    font-size:2rem;
+
+
+}
+
+
+
+
+.timeline::before {
+
+
+    left:20px;
+
+
+}
+
+
+
+.timeline-item,
+
+
+.timeline-item:nth-child(even),
+
+
+.timeline-item:nth-child(odd){
+
+
+    width:100%;
+
+
+    left:0;
+
+
+    text-align:left;
+
+
+    padding-left:70px;
+
+
+}
+
+
+
+.timeline-item .timeline-icon,
+
+
+.timeline-item:nth-child(even) .timeline-icon,
+
+
+.timeline-item:nth-child(odd) .timeline-icon {
+
+
+    left:-10px;
+
+
+}
+
+
+
+.days {
+
+
+    gap:5px;
+
+
+}
+
+
+
+.days span {
+
+
+    width:35px;
+
+
+    height:35px;
+
+
+    font-size:.8rem;
+
+
+}
+
+
+
+.final-content h1 {
+
+
+    font-size:2.8rem;
+
+
+}
+
+
+
+.moon {
+
+
+    width:90px;
+
+
+    height:90px;
+
+
+}
+
+
+}

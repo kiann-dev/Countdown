@@ -1,0 +1,856 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Uma surpresa para você ❤️</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+</head>
+
+
+<body>
+
+
+<!-- CAMADA DE FUNDO -->
+
+<div class="stars"></div>
+
+<div class="moon">
+    <div class="moon-glow"></div>
+</div>
+
+
+<div class="clouds"></div>
+
+
+<div class="hearts-container"></div>
+
+
+<!-- INTRODUÇÃO -->
+
+<section class="intro" id="intro">
+
+    <div class="intro-content">
+
+        <div class="heart-logo">
+            ❤️
+        </div>
+
+
+        <h1>
+            Oi, meu amor...
+        </h1>
+
+
+        <p class="intro-text">
+            Existe uma surpresa sendo preparada
+            especialmente para você.
+        </p>
+
+
+        <p class="intro-small">
+            Algumas coisas ficam ainda mais bonitas
+            quando esperamos pelo momento certo.
+        </p>
+
+
+        <button class="enter-btn" id="enterBtn">
+            ✨ Continuar
+        </button>
+
+    </div>
+
+</section>
+
+
+
+<!-- CONTEÚDO PRINCIPAL -->
+
+<main id="mainContent" class="hidden">
+
+
+<!-- CONTADOR -->
+
+<section class="countdown-section">
+
+
+    <div class="glass-card">
+
+
+        <h2>
+            Nosso momento está chegando ❤️
+        </h2>
+
+
+        <p class="changing-message" id="changingMessage">
+            Cada segundo nos aproxima de algo especial.
+        </p>
+
+
+
+        <div class="countdown" id="countdown">
+
+
+            <div class="time-box">
+
+                <span id="days">
+                    00
+                </span>
+
+                <label>
+                    Dias
+                </label>
+
+            </div>
+
+
+
+            <div class="time-box">
+
+                <span id="hours">
+                    00
+                </span>
+
+                <label>
+                    Horas
+                </label>
+
+            </div>
+
+
+
+
+            <div class="time-box">
+
+                <span id="minutes">
+                    00
+                </span>
+
+                <label>
+                    Minutos
+                </label>
+
+            </div>
+
+
+
+            <div class="time-box">
+
+                <span id="seconds">
+                    00
+                </span>
+
+                <label>
+                    Segundos
+                </label>
+
+            </div>
+
+
+        </div>
+
+
+    </div>
+
+
+</section>
+
+
+
+
+
+<!-- PLAYER DE MÚSICA -->
+
+
+<section class="music-section">
+
+
+<div class="music-player glass-card">
+
+
+<h3>
+🎵 Nossa trilha sonora
+</h3>
+
+
+<p id="songName">
+Nenhuma música tocando
+</p>
+
+
+<audio id="audioPlayer"></audio>
+
+
+
+<div class="music-controls">
+
+
+<button id="previousSong">
+⏮️
+</button>
+
+
+<button id="playPause">
+▶️
+</button>
+
+
+<button id="nextSong">
+⏭️
+</button>
+
+
+<button id="randomSong">
+🔀
+</button>
+
+
+</div>
+
+
+</div>
+
+
+</section>
+
+<!-- CARTA ESPECIAL -->
+
+
+<section class="letter-section">
+
+
+<div class="letter-card glass-card" id="letterCard">
+
+
+<div class="envelope">
+
+<div class="envelope-top"></div>
+
+<div class="envelope-body">
+
+
+<span>
+💌
+</span>
+
+
+</div>
+
+
+</div>
+
+
+
+<h3>
+Uma mensagem para você
+</h3>
+
+
+<p>
+Tenho algo guardado para você...
+</p>
+
+
+<button id="openLetter">
+Abrir carta ❤️
+</button>
+
+
+</div>
+
+
+</section>
+
+
+
+
+
+<!-- MODAL DA CARTA -->
+
+
+<div class="letter-modal" id="letterModal">
+
+
+<div class="letter-content">
+
+
+<button class="close-letter" id="closeLetter">
+×
+</button>
+
+
+
+<h2>
+Para você ❤️
+</h2>
+
+
+<p id="letterText">
+
+Se você chegou até aqui,
+quero que saiba que cada detalhe
+dessa espera foi pensado com muito carinho.
+
+<br><br>
+
+Cada segundo desse contador representa
+um momento mais perto de uma lembrança
+que preparei especialmente para você.
+
+<br><br>
+
+Obrigado por fazer parte da minha vida
+e por tornar meus dias mais felizes.
+
+<br><br>
+
+Mal posso esperar para ver seu sorriso.
+
+❤️
+
+</p>
+
+
+
+</div>
+
+
+</div>
+
+
+
+
+
+<!-- LINHA DO TEMPO -->
+
+
+<section class="timeline-section">
+
+
+<h2>
+Nossa história ✨
+</h2>
+
+
+
+<div class="timeline">
+
+
+
+<div class="timeline-item active">
+
+
+<div class="timeline-icon">
+✨
+</div>
+
+
+<div class="timeline-text">
+
+<h3>
+Nos conhecemos
+</h3>
+
+<p>
+O começo de algo especial.
+</p>
+
+</div>
+
+
+</div>
+
+
+
+
+<div class="timeline-item">
+
+
+<div class="timeline-icon">
+💬
+</div>
+
+
+<div class="timeline-text">
+
+<h3>
+Começamos a conversar
+</h3>
+
+<p>
+Pequenos momentos que aproximaram nossos corações.
+</p>
+
+</div>
+
+
+</div>
+
+
+
+
+<div class="timeline-item">
+
+
+<div class="timeline-icon">
+❤️
+</div>
+
+
+<div class="timeline-text">
+
+<h3>
+Nos apaixonamos
+</h3>
+
+<p>
+Uma história começou a ser escrita.
+</p>
+
+</div>
+
+
+</div>
+
+
+
+
+<div class="timeline-item">
+
+
+<div class="timeline-icon">
+💍
+</div>
+
+
+<div class="timeline-text">
+
+<h3>
+Nosso pedido de namoro
+</h3>
+
+<p>
+O dia que virou uma lembrança especial.
+</p>
+
+</div>
+
+
+</div>
+
+
+
+
+<div class="timeline-item future">
+
+
+<div class="timeline-icon">
+🎉
+</div>
+
+
+<div class="timeline-text">
+
+<h3>
+Nosso primeiro mês
+</h3>
+
+<p>
+Esperando pelo nosso momento.
+</p>
+
+</div>
+
+
+</div>
+
+
+
+</div>
+
+
+</section>
+
+
+
+
+
+
+
+<!-- CALENDÁRIO -->
+
+
+<section class="calendar-section">
+
+
+<div class="calendar-card glass-card">
+
+
+<h2>
+📅 Nosso dia
+</h2>
+
+
+
+<div class="calendar">
+
+
+<div class="month">
+
+Julho / Agosto 2026
+
+</div>
+
+
+
+<div class="days">
+
+
+<span>01</span>
+<span>02</span>
+<span>03</span>
+<span>04</span>
+<span>05</span>
+<span>06</span>
+<span>07</span>
+<span>08</span>
+<span>09</span>
+<span>10</span>
+<span>11</span>
+<span class="highlight">12</span>
+<span>13</span>
+<span>14</span>
+<span>15</span>
+<span>16</span>
+<span>17</span>
+<span>18</span>
+<span>19</span>
+<span>20</span>
+<span>21</span>
+<span>22</span>
+<span>23</span>
+<span>24</span>
+<span>25</span>
+<span>26</span>
+<span>27</span>
+<span>28</span>
+<span>29</span>
+<span>30</span>
+<span>31</span>
+
+</div>
+
+
+
+<div class="august-day">
+
+
+❤️ 04/08
+
+<br>
+
+Nosso momento
+
+
+</div>
+
+
+</div>
+
+
+</div>
+
+
+</section>
+
+
+
+
+
+
+<!-- EASTER EGGS -->
+
+
+<section class="secrets-section">
+
+
+<div class="secret-elements">
+
+
+<div class="secret-star">
+⭐
+</div>
+
+
+<div class="secret-moon">
+🌙
+</div>
+
+
+<div class="secret-heart">
+❤️
+</div>
+
+
+</div>
+
+
+
+<p id="secretMessage">
+
+Existem pequenos detalhes esperando para serem descobertos...
+
+</p>
+
+
+</section>
+
+<!-- ÁREA FINAL DO CONTADOR -->
+
+<section class="unlock-section">
+
+
+<div class="unlock-card glass-card">
+
+
+<h2>
+Quando chegar o momento...
+</h2>
+
+
+<p>
+Uma surpresa estará esperando por você ❤️
+</p>
+
+
+<div class="locked-icon" id="lockedIcon">
+
+🔒
+
+</div>
+
+
+<p class="unlock-status" id="unlockStatus">
+
+Aguardando o dia 04/08...
+
+</p>
+
+
+
+</div>
+
+
+</section>
+
+
+
+
+
+
+
+<!-- TELA DE FINALIZAÇÃO -->
+
+
+<section class="final-screen hidden" id="finalScreen">
+
+
+<div class="final-content">
+
+
+<div class="celebration">
+
+❤️✨🎉✨❤️
+
+</div>
+
+
+
+<h1 id="finalTitle">
+
+</h1>
+
+
+<p id="finalText">
+
+</p>
+
+
+
+</div>
+
+
+</section>
+
+
+
+
+
+
+
+
+<!-- CAIXA DE PRESENTE -->
+
+
+<section class="gift-section hidden" id="giftSection">
+
+
+<div class="gift-container">
+
+
+<div class="gift-box" id="giftBox">
+
+
+<div class="gift-lid">
+
+</div>
+
+
+<div class="gift-body">
+
+
+<div class="ribbon vertical"></div>
+
+<div class="ribbon horizontal"></div>
+
+
+</div>
+
+
+</div>
+
+
+
+<p>
+
+Clique no presente para abrir ❤️
+
+</p>
+
+
+</div>
+
+
+</section>
+
+
+
+
+
+
+
+<!-- TRANSIÇÃO PARA O SITE -->
+
+
+<section class="redirect-section hidden" id="redirectSection">
+
+
+<div class="redirect-card glass-card">
+
+
+<h2>
+
+Preparando sua surpresa...
+
+</h2>
+
+
+
+<div class="loading-bar">
+
+
+<div class="loading-progress" id="loadingProgress">
+
+</div>
+
+
+</div>
+
+
+
+<p id="redirectText">
+
+Organizando cada detalhe ❤️
+
+</p>
+
+
+</div>
+
+
+</section>
+
+
+
+
+
+
+
+<!-- RASTRO DE CORAÇÕES -->
+
+<div class="heart-trail"></div>
+
+
+
+
+
+<!-- CONFETES -->
+
+<div id="confettiContainer">
+
+</div>
+
+
+
+
+
+
+</main>
+
+
+
+
+
+
+
+
+<!-- CONFIGURAÇÃO -->
+
+
+<script>
+
+
+/*
+
+IMPORTANTE:
+
+O JavaScript principal ficará no arquivo:
+
+script.js
+
+
+Este bloco apenas carrega o arquivo.
+
+*/
+
+
+</script>
+
+
+<script src="script.js"></script>
+
+
+
+</body>
+
+
+</html>
